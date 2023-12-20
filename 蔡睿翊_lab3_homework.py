@@ -187,7 +187,7 @@ def train(model, train_ldr, val_ldr, learning_rate, epochs):
                 early_stopping_threshold_count = 0
             else:
                 early_stopping_threshold_count += 1
-            if early_stopping_threshold_count >= 10:
+            if early_stopping_threshold_count >= 3:
                 print("Early stopping")
                 break
 
@@ -287,7 +287,7 @@ model = BertSentimentClassifier(base_model)
 
 # training and testing
 print('Training...')
-EPOCHS = 10
+EPOCHS = 3
 LR = 2e-5
 train(model, train_dataloader, val_dataloader, LR, EPOCHS)
 
